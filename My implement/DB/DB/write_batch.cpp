@@ -39,10 +39,27 @@ Status WriteBatch::Iterate(Handler* handler) const
 		switch (tag)
 		{
 		case kTypeValue:
+			if (GetLengthPrefixedSlice(&input, &key) &&
+				GetLengthPrefixedSlice(&input, &value))
+			{
+				handler->Put(key, value);
+			}
+			else
+			{
+				return Status::Corruption("bad WriteBatch Put");
+			}
 			break;
 		case kTypeDeletion:
+			if (GetLengthPrefixedSlice(&input, &key))
+			{
+				handler->Delete(key);
+			}
+			else {
+				return Status::Corruption("bad WriteBatch Delete");
+			}
 			break;
 		default:
+			return Status::Corruption("unknown WriteBatch tag");
 			break;
 		}
 	}
@@ -94,6 +111,36 @@ void WriteBatch::Append(const WriteBatch& source) {
 WriteBatchInternal::Append(this, &source);
 }
 
+
+namespace {
+	class MemTableInserter : public WriteBatch::Handler{
+	public:
+		SequenceNumber sequence_;
+		MemTable* mem_;
+
+		void Put(const Slice& key, const Slice& value) override {
+			mem_->Add(sequence_, kTypeValue, key, value);
+			sequence_++;
+		}
+
+		void Delete(const Slice& key) override {
+			mem_->Add(sequence_, kTypeDeletion, key, Slice());
+			sequence_++;
+		}
+	};
+}
+
+Status WriteBatchInternal::InsertInto(const WriteBatch* b, MemTable* memtable) {
+	MemTableInserter inserter;
+	inserter.sequence_ = WriteBatchInternal::Sequence(b);
+	inserter.mem_ = memtable;
+	return b->Iterate(&inserter);
+}
+
+void WriteBatchInternal::SetContents(WriteBatch* b, const Slice& contents) {
+	assert(contents.size() >= kHeader);
+	b->rep_.assign(contents.data(), contents.size());
+}
 
 // ½«src WriteBatch append µ½dst.
 void WriteBatchInternal::Append(WriteBatch* dst, const WriteBatch* src) {
