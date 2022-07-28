@@ -168,11 +168,12 @@ void test_random_remove(SkipList& mylist)
 	cout << "after remove size= : " << mylist.size() << endl;
 }
 
+extern void test_status();
 
 int main()
 {
 	
-	int num = 0xffad45;
+	/*int num = 0xffad45;
 
 	uint8_t a = num;
 
@@ -183,7 +184,9 @@ int main()
 
 	uint32_t re = 0;
 	GetVarint32(&str, re);
-	cout << "encoding: " << re << endl;
+	cout << "encoding: " << re << endl;*/
+
+	test_status();
 
 	return 0;
 }

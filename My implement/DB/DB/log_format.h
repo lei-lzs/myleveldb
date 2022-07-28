@@ -4,17 +4,19 @@
 
 enum RecordType {
 	kZeroType =0,
+	kFullType,
 	kFirstType,
 	kMidType,
 	kLastType
 };
 
-static int kBlockSize = 32768; //uint16_t
+//常量才能在头文件定义
+static const int kBlockSize = 32768; //uint16_t
 
-static int kMaxRecordType = 4;
+static const int kMaxRecordType = 4;
 
 //[ checksum(4 Byte)+length(2 Byte) + type(1 Byte)]
-static int kHeaderSize = 7;
+static const int kHeaderSize = 7;
 
 
 #endif

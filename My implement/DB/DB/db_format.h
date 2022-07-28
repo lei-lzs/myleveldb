@@ -1,3 +1,4 @@
+#include <cstdint>
 #ifndef _LEVELDB_DB_FORMAT_HH
 #define _LEVELDB_DB_FORMAT_HH
 
@@ -26,6 +27,10 @@ namespace config {
 	static const int kReadBytesPeriod = 1048576;
 
 }  // namespace config
+
+enum ValueType { kTypeDeletion = 0x0, kTypeValue = 0x1 };
+
+typedef uint64_t SequenceNumber;
 
 //¶ÔInternaKeyµÄ·â×°
 //UserKey+ SequenceNum + type 

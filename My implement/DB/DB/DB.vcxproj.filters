@@ -72,6 +72,9 @@
     <ClInclude Include="db_format.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="filter_block.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SkipList.cpp">
@@ -105,6 +108,33 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="db_format.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="filter_block.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="status.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="log_writer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="options.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="table.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="table_builder.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="version_set.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test_status.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="coding.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

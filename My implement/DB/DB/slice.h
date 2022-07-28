@@ -12,8 +12,8 @@ public:
     Slice(const std::string& s) { data_ = s.data(); size_ = s.size(); }
     Slice(const char* s) { data_ = s; size_ = strlen(s); }
     
-    Slice(const Slice& other) = delete;
-    Slice& operator=(const Slice& other) =delete;
+    Slice(const Slice& other) = default;
+    Slice& operator=(const Slice& other) = default;
 
     // should not have non-trtival destructor as it's just a view proxy.
     ~Slice() =  default;

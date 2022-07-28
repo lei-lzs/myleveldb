@@ -45,9 +45,7 @@ public:
 	bool IsInvalidArgument() { return code() == kInvalidArgument; }
 	bool IsIOError() { return code() == kIOError; }
 
-	std::string ToString() const {
-
-	}
+	std::string ToString() const;
 
 private:
 	enum Code {
@@ -59,7 +57,7 @@ private:
 		kIOError = 5
 	};
 
-	Code code() { return static_cast<Code>(state_[4]); }
+	Code code() const { return static_cast<Code>(state_[4]); }
 
 	Status(Code code, const Slice& msg, const Slice& msg2);
 

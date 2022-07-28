@@ -23,4 +23,6 @@ char* Arena::AllocateNewBlock(size_t n)
 	blocks_.push_back(ptr);
 
 	memory_usage_.fetch_add(n + sizeof(char*), std::memory_order_relaxed);
+
+	return ptr;
 }

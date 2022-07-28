@@ -1,13 +1,3 @@
-﻿  main.cpp
-D:\Lzs\C++ learn\Git Hub Project for Learn\leveldb\实现解析\My implement\DB\DB\coding.h(83,24): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\Lzs\C++ learn\Git Hub Project for Learn\leveldb\实现解析\My implement\DB\DB\main.cpp(99,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-D:\Lzs\C++ learn\Git Hub Project for Learn\leveldb\实现解析\My implement\DB\DB\main.cpp(104,11): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
-D:\Lzs\C++ learn\Git Hub Project for Learn\leveldb\实现解析\My implement\DB\DB\main.cpp(113,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-D:\Lzs\C++ learn\Git Hub Project for Learn\leveldb\实现解析\My implement\DB\DB\main.cpp(118,11): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
-D:\Lzs\C++ learn\Git Hub Project for Learn\leveldb\实现解析\My implement\DB\DB\main.cpp(128,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-D:\Lzs\C++ learn\Git Hub Project for Learn\leveldb\实现解析\My implement\DB\DB\main.cpp(132,11): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
-D:\Lzs\C++ learn\Git Hub Project for Learn\leveldb\实现解析\My implement\DB\DB\main.cpp(141,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-D:\Lzs\C++ learn\Git Hub Project for Learn\leveldb\实现解析\My implement\DB\DB\main.cpp(145,11): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
-D:\Lzs\C++ learn\Git Hub Project for Learn\leveldb\实现解析\My implement\DB\DB\main.cpp(154,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-D:\Lzs\C++ learn\Git Hub Project for Learn\leveldb\实现解析\My implement\DB\DB\main.cpp(161,11): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
-  DB.vcxproj -> D:\Lzs\C++ learn\Git Hub Project for Learn\leveldb\实现解析\My implement\DB\x64\Debug\DB.exe
+﻿  coding.cpp
+D:\Lzs\C++ learn\Git Hub Project for Learn\Leveldb实现解析\My implement\DB\DB\coding.cpp(6,9): warning C4552: ”>>“: 未使用表达式结果
+D:\Lzs\C++ learn\Git Hub Project for Learn\Leveldb实现解析\My implement\DB\DB\coding.cpp(78,24): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据

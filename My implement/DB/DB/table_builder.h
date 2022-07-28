@@ -36,7 +36,7 @@ public:
 	uint64_t FileSize() const;
 
 private:
-	bool ok() const { return Status.ok(); }
+	bool ok() const { return Status.OK(); }
 
 	void WriteBlock(BlockBuilder* block, BlockHandle* handle);
 
