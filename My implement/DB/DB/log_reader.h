@@ -36,7 +36,7 @@ public:
 private:
 	enum {
 		kEof = kMaxRecordType + 1,
-		kBadREcord = kMaxRecordType + 2
+		kBadRecord = kMaxRecordType + 2
 	};
 
 	bool SkipToInitialBlck();

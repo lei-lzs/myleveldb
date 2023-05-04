@@ -149,15 +149,20 @@
     <ClInclude Include="comparator.h" />
     <ClInclude Include="crc32c.h" />
     <ClInclude Include="db.h" />
+    <ClInclude Include="db_impl.h" />
     <ClInclude Include="db_format.h" />
+    <ClInclude Include="db_iter.h" />
     <ClInclude Include="elapsed_time_reporter.h" />
     <ClInclude Include="filter_block.h" />
     <ClInclude Include="filter_policy.h" />
     <ClInclude Include="format.h" />
+    <ClInclude Include="hash.h" />
     <ClInclude Include="iterator.h" />
+    <ClInclude Include="logging.h" />
     <ClInclude Include="log_format.h" />
     <ClInclude Include="log_reader.h" />
     <ClInclude Include="log_writer.h" />
+    <ClInclude Include="memtable.h" />
     <ClInclude Include="options.h" />
     <ClInclude Include="scope_handle.h" />
     <ClInclude Include="SkipList.h" />
@@ -169,22 +174,30 @@
     <ClInclude Include="version_set.h" />
     <ClInclude Include="windows_writable_file.h" />
     <ClInclude Include="writable_file.h" />
+    <ClInclude Include="write_batch.h" />
+    <ClInclude Include="write_batch_internal.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="arena.cpp" />
     <ClCompile Include="block.cpp" />
     <ClCompile Include="BlockIterator.cpp" />
     <ClCompile Include="block_builder.cpp" />
+    <ClCompile Include="bloom.cpp" />
     <ClCompile Include="builder.cpp" />
     <ClCompile Include="coding.cpp" />
     <ClCompile Include="crc32c.cpp" />
+    <ClCompile Include="db_impl.cpp" />
     <ClCompile Include="db_format.cpp" />
+    <ClCompile Include="db_iter.cpp" />
     <ClCompile Include="filter_block.cpp" />
     <ClCompile Include="format.cpp" />
+    <ClCompile Include="hash.cpp" />
     <ClCompile Include="iterator.cpp" />
+    <ClCompile Include="logging.cpp" />
     <ClCompile Include="log_reader.cpp" />
     <ClCompile Include="log_writer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="memtable.cpp" />
     <ClCompile Include="options.cpp" />
     <ClCompile Include="SkipList.cpp" />
     <ClCompile Include="slice.cpp" />
@@ -193,6 +206,7 @@
     <ClCompile Include="table_builder.cpp" />
     <ClCompile Include="test_status.cpp" />
     <ClCompile Include="version_set.cpp" />
+    <ClCompile Include="write_batch.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

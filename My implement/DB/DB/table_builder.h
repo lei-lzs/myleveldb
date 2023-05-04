@@ -9,6 +9,8 @@ class Slice;
 class BlockBuilder;
 class BlockHandle;
 
+//用于构建Tabel，和Table类的过程相反
+//如果MemTable(SkipList)中的数据达到一定大小，就会构建Level0 Table。
 class TableBuilder
 {
 public:
@@ -36,7 +38,7 @@ public:
 	uint64_t FileSize() const;
 
 private:
-	bool ok() const { return Status.OK(); }
+	bool ok() const { return status().ok(); }
 
 	void WriteBlock(BlockBuilder* block, BlockHandle* handle);
 

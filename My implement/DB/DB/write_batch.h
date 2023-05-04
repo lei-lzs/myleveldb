@@ -10,6 +10,7 @@ class Slice;
 class WriteBatch
 {
 public:
+	//迭代器处理函数
 	class Handler {
 	public:
 		virtual ~Handler();
@@ -34,7 +35,8 @@ public:
 
 	void Append(const WriteBatch& source);
 
-	Status Iterator(Handler* handler) const;
+	//对writeBatch 进行迭代，处理里面每一条记录
+	Status Iterate(Handler* handler) const;
 
 private:
 	friend class WriteBatchInternal;

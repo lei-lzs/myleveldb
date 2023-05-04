@@ -22,7 +22,7 @@ public:
     size_t size() const { return size_; }   
     bool empty() const { return size_ == 0; }
 
-    char operator[](size_t n) { 
+    char operator[](size_t n) const{ 
         assert(n <size_);
         return data_[n]; 
     }

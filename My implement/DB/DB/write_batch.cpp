@@ -3,7 +3,20 @@
 #include "write_batch_internal.h"
 #include "coding.h"
 
+//按如下格式存储在string rep_中
+// WriteBatch::rep_ :=
+//    sequence: fixed64
+//    count: fixed32
+//    data: record[count]
+// record :=
+//    kTypeValue varstring varstring         |
+//    kTypeDeletion varstring
+// varstring :=
+//    len: varint32
+//    data: uint8[len]
 //WriteBatch的Header，8 byte 序列号， 4 byte count
+//key+value -> keyLength/key/valueLen/value
+
 static const size_t kHeader = 12;
 
 WriteBatch::WriteBatch()
@@ -102,7 +115,7 @@ void WriteBatch::Put(const Slice& key, const Slice& value) {
 
 void WriteBatch::Delete(const Slice& key) {
 	WriteBatchInternal::SetCount(this, WriteBatchInternal::Count(this) + 1);
-	rep_.push_back(static_cast<char>(kTypeValue));
+	rep_.push_back(static_cast<char>(kTypeDeletion));
 	//记录长度
 	PutLengthPrefixedSlice(&rep_, key);
 }

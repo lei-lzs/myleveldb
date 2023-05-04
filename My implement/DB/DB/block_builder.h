@@ -7,9 +7,11 @@
 class Options;
 class Slice;
 
+//用于构建Block
 class BlockBuilder
 {
 public:
+	//explicit
 	explicit BlockBuilder(const Options* options);
 	BlockBuilder(const BlockBuilder&) = delete;
 	BlockBuilder& operator = (const BlockBuilder&) = delete;

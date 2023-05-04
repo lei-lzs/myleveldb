@@ -9,6 +9,8 @@ class Comparator;
 //Block是SSTable中块，包括库DataBlock，IndexBlock等
 //Block 记录了？
 //Block 通过Iterator 访问
+
+//用于存储解析Block
 class Block
 {
 public:
@@ -23,8 +25,9 @@ public:
 
 	Iterator* NewIterator(const Comparator* comparator);
 
-
 private:
+
+	class Iter;
 
 	uint32_t NumRestarts() const;
 
